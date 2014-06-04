@@ -34,6 +34,8 @@ public class PersonDAOImpl implements PersonDAO {
 	@Override
 	public void insert(Person person) {
 	
+		//String sql="UPDATE `paragraph` SET `Authenticat _Flag`=1 WHERE `paragraph_ID`="+para_id+" AND `Book_Book_ID`= "+book_id+" ";
+		
 		String sql="INSERT INTO person"+"(fname,lname,age) VALUES (?,?,?)";
 		int data=jdbcTemplate.update(sql, new Object[]{person.getFname(),person.getLname(),person.getAge()});
 		
