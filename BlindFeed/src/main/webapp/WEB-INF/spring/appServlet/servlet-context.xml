@@ -30,6 +30,8 @@
 	
 	<beans:bean id="storeclips" class="com.deadlock.blindfeed.record.Services"></beans:bean>
 	
+	<beans:bean id="paragraph" class="com.deadlock.blindfeed.record.ParagraphDAO"></beans:bean>
+	
 	 <!-- declare datasource bean --> 
 	 <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	     <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>

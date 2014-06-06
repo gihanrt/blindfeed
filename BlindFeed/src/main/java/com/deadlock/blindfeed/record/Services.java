@@ -13,7 +13,9 @@ public class Services {
 	
 	private static final Logger logger = LoggerFactory.getLogger(Services.class);
 
-	public void SendToServer(InputStream stream) throws IOException{
+	String completepath;
+	
+	public String SendToServer(InputStream stream) throws IOException{
 		
 		byte[] buffer = new byte[8192];
 	    int bytesRead;
@@ -35,7 +37,7 @@ public class Services {
 	    	
 	    	
 			    int count=listOfFiles.length+1;
-			  
+			    completepath=path+"AudioClip"+count+".mp3";
 			    File someFile = new File(path+"AudioClip"+count+".mp3");
 			    FileOutputStream fos = new FileOutputStream(someFile);
 			
@@ -48,5 +50,6 @@ public class Services {
 	    }else{
 	    	logger.info("there is no such folder");
 	    }
+		return completepath;
 	}
 }
