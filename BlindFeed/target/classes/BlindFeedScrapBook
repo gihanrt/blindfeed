@@ -1,0 +1,1 @@
+SELECT `Paragraph_ID`,`Para_text`,`Book_Book_ID` FROM `paragraph` WHERE `Audio_Flag`=0
