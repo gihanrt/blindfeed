@@ -41,16 +41,20 @@ public class RecordController {
 		
 		InputStream input = request.getInputStream();
 		
-	    String path=storeclips.SendToServer(input);
+		String mypath=request.getSession().getServletContext().getRealPath("resources/audio");
+		
+		System.out.println(mypath);
+		
+	    String path=storeclips.SendToServer(input,mypath);
 	    
 	    if((path.length()) != 0){
 	    	//session ->{user id,paragrph id, book id}
 	    	System.out.println(path);
-	    	int userid=300;
+	    	/*int userid=300;
 	    	int paragraphid=401;
-	    	int bookid=200;
+	    	int bookid=200;*/
 	    	
-	    	paragraph.UpdateParagraphData(path,userid,paragraphid,bookid);
+	    	//paragraph.UpdateParagraphData(path,userid,paragraphid,bookid);
 	    }
 	    
         logger.info("finish.............");
