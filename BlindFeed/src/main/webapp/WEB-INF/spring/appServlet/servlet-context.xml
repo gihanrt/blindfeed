@@ -28,6 +28,9 @@
 	    <beans:property name="dataSource" ref="dataSource"></beans:property>
 	</beans:bean>
 	
+	<!-- bean definition -->
+	<beans:bean id="paraDB" class="com.deadlock.blindfeed.validation.para_DB"></beans:bean>
+	
 	<beans:bean id="storeclips" class="com.deadlock.blindfeed.record.Services"></beans:bean>
 	
 	<beans:bean id="paragraph" class="com.deadlock.blindfeed.record.ParagraphDAO"></beans:bean>
