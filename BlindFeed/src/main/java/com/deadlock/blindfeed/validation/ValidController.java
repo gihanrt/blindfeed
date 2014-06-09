@@ -6,6 +6,9 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,8 +24,7 @@ import com.deadlock.blindfeed.validation.para_DB;
  */
 @Controller
 public class ValidController {
-	
-	@Autowired para_DB paraDB;
+@Autowired para_DB paraDB;
 	
 	private static final Logger logger = LoggerFactory.getLogger(ValidController.class);
 	
@@ -43,27 +45,35 @@ public class ValidController {
 		return "home";
 	}
 	
-	int para_id;
-	int book_id;
-	 String path;
+     
 	
 	@RequestMapping(value="/validview",method=RequestMethod.GET)
-	public String DisplayData(Model model){
+	public String DisplayData(HttpServletRequest request,Model model){
 
 		List<Paragraph> list=paraDB.getpara();
-		
 		int length=list.size();
 		if(length==0){
 			return "SQLexception";
 		}
 		else{
+		HttpSession session = request.getSession();
+		
+		    int para_id=list.get(0).getParagraph_ID();
+			int book_id=list.get(0).getBook_Book_ID();
+			String path=list.get(0).getLocation();
+		
+		 session.setAttribute("para_id",para_id);
+		 session.setAttribute("book_id",book_id);
+		 session.setAttribute("path",path);
+		
+		
+		
+		
 		model.addAttribute("PList", list.get(0));
 		
 		paraDB.accept_upadate1(para_id, book_id);
 		
-	    path=list.get(0).getLocation();
-	    para_id=list.get(0).getParagraph_ID();
-	    book_id=list.get(0).getBook_Book_ID();
+	    
 	    model.addAttribute("loc_path", path);
 	    System.out.println(path);
 	   
@@ -71,16 +81,28 @@ public class ValidController {
 	}
 	}
 	@RequestMapping(value="/validaccept",method=RequestMethod.GET)
-	public String accept(){
+	public String accept(HttpServletRequest request){
 		
+		HttpSession session = request.getSession(false);
+		
+		int para_id=(Integer) session.getAttribute("para_id");
+		int book_id=(Integer) session.getAttribute("book_id");
+		//int user_id=Integer) session.getAttribute("user_id");
 		paraDB.accept_upadate1(para_id, book_id);
-		//paraDB.accept_upadate2(para_id, book_id);
+		//paraDB.accept_upadate2(para_id, book_id,user_id);
 		System.out.println("Sucessfully updated");
 		return "thankyou";
 	}
 	@RequestMapping(value="/validreject",method=RequestMethod.GET)
-public String reject(Locale locale){
+public String reject(HttpServletRequest request){
 		
+		
+		
+            HttpSession session = request.getSession(false);
+		
+		int para_id=(Integer) session.getAttribute("para_id");
+		int book_id=(Integer) session.getAttribute("book_id");
+		String path=(String) session.getAttribute("path");
 		
 		paraDB.audio_delete(para_id, book_id);
 		paraDB.reject_upadate(para_id, book_id);

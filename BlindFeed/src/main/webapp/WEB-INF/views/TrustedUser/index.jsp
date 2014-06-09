@@ -63,16 +63,47 @@
 
       <!-- Main component for a primary marketing message or call to action -->
       <div class="jumbotron">
-        <h1>BlindFeed.</h1>
-        <p>shine to their lonly life</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="about.html" role="button">More details &raquo;</a>
+        <h1>BlindFeed</h1>
+        <p>- shine to their lonely life -</p>
+        
+        
+        <div class="row clearfix">
+        
+        <div class="col-md-12 column">
+        
+       	<p>
+				
+285 million people are estimated to be visually impaired worldwide, 39 million are blind 
+and 246 million have low vision. About 90% of the worlds visually impaired live in developing 
+countries. Reading is the only way for them to see the real world. Most of the visually impaired 
+people love reading. Their only way of reading is braille books. But fewer than 10 percent of the 
+people who are legally blind in the World are Braille readers. The tragedy is that there are only 
+less than 1% of the books that have a braille edition. Our proposing project gives an appropriate 
+solution for this problem.<br>
+				This project is to give the ability of using books to visually impaired people by using special 
+audio format that create from the contribution of volunteers. Our Web application is open to any volunteer who is
+ willing to convert a pdf into an audio
+
+			</p>
+			<p>
+          <a class="btn btn-lg btn-primary" href="about" role="button">More details &raquo;</a>
         </p>
+			
+        </div>
+        
+        <h3>Introduction Video</h3>
+        <div class="media">
+        <video width="820" height="540" controls>
+  <source src="resources/movie.mp4" type="video/mp4">
+  
+  Your browser does not support the video tag.
+</video>
+</div>
+        
+       
+        
       </div>
-      <div class="container">
-        <center><p class="text-muted">Deadlock product - BlindFeed</p></center>
-      </div>
-    </div> <!-- /container -->
+      </div> <!-- /container -->
     
     <!-- Bootstrap core JavaScript
     ================================================== -->
