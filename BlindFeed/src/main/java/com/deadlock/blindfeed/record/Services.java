@@ -71,6 +71,10 @@ public class Services {
 		    FileOutputStream fos = new FileOutputStream(someFile);
 		    System.out.println("====="+completepath+"=====");
 		    System.out.println("====="+someFile.getAbsolutePath()+"======"); 
+		    
+		    fos.write(output.toByteArray());
+	        fos.flush();
+	        fos.close();
 	
 	    }
 		return normalpath;
