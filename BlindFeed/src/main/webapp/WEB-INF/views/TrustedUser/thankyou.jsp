@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
- <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,6 +24,30 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+   location.href="http://localhost:8080/show_para1/accept";
+  });
+});
+</script>
+    <script>
+$(document).ready(function(){
+  $("#btn2").click(function(){
+   location.href="http://localhost:8080/show_para1/reject/";
+  });
+});
+</script>
+
+<script>
+function myFunction() {
+    alert("Thank You for your contribution");
+}
+</script>
+
+    
   </head>
   <body>
     <!-- Fixed navbar -->
@@ -41,15 +65,15 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="userindex">Home</a></li>
-            <li class="active"><a href="contribute.html">Contribute</a></li>
-            <li><a href="uservalidate">Validate</a></li>
+            <li><a href="usercontribute">Contribute</a></li>
+            <li class="active"><a href="validate.html">Validate</a></li>
             <li><a href="userabout">About</a></li>
             <li><a href="usercontact">Contact us</a></li>
             <li><a href="userhelp">Help</a></li>
           </ul>
           <form class="navbar-form navbar-right" role="form">
-             <a id="user" class="btn btn-success" href="#" role="button">user : Tharindu</a>
-             <a id="logout" class="btn btn-success" href="#" role="button">logout</a>
+             <a id="user" class="btn btn-success" href="#" role="button">Your Logged as ${user}</a>
+             <a id="logout" class="btn btn-success" href="logout" role="button">logout</a>
           </form>
           <ul class="nav navbar-nav navbar-right"> 
             <li class="active"></li>
@@ -58,14 +82,23 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="jumbotron">
 
-      <!-- Main component for a primary marketing message or call to action -->
+      
+       
+    
+
+<h1>
+	Thank You for your contribution
+</h1>
+
+
+
+
+        
+      
+      
       <div class="jumbotron">
-        <h1>contribute</h1>
-        <p>show paragraph and recording module should be here...</p>
-      </div>
-      <div class="container">
         <center><p class="text-muted">Deadlock product - BlindFeed</p></center>
       </div>
     </div> <!-- /container -->
@@ -76,4 +109,5 @@
     <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
     <script src='<c:url value="resources/js/bootstrap.min.js"></c:url>'></script>
   </body>
+
 </html>

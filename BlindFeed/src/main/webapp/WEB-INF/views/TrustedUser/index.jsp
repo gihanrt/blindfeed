@@ -42,15 +42,15 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="usercontribute">Contribute</a></li>
-            <li><a href="uservalidate">Validate</a></li>
+            <li><a href="record">Contribute</a></li>
+            <li><a href="validation">Validate</a></li>
             <li><a href="userabout">About</a></li>
             <li><a href="usercontact">Contact us</a></li>
             <li><a href="userhelp">Help</a></li>
           </ul>
            <form class="navbar-form navbar-right" role="form">
-             <a id="user" class="btn btn-success" href="#" role="button">user : Tharindu</a>
-             <a id="logout" class="btn btn-success" href="#" role="button">logout</a>
+             <a id="user" class="btn btn-success" href="#" role="button">Your Logged as ${user} </a>
+             <a id="logout" class="btn btn-success" href="logout" role="button">logout</a>
           </form>
           <ul class="nav navbar-nav navbar-right"> 
             <li class="active"></li>

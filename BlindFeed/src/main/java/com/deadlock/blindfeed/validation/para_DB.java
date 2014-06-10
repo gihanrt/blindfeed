@@ -75,12 +75,12 @@ public class para_DB implements para_DAO{
 	
 	
 	@Override
-	public void accept_upadate2(int para_id,int book_id){
+	public void accept_upadate2(int para_id,int book_id,int userid){
 		
 		
-		//String sql="UPDATE `paragraph` SET `User_authenticate_User_ID`=**** WHERE `paragraph_ID`="+para_id+" AND `Book_Book_ID`= "+book_id+" ";
-		//jdbcTemplate.update(sql);
-		//System.out.println("Done");
+		String sql="UPDATE `paragraph` SET `User_authenticate_User_ID`="+userid+" WHERE `paragraph_ID`="+para_id+" AND `Book_Book_ID`= "+book_id+" ";
+		jdbcTemplate.update(sql);
+		System.out.println("Done");
 		
 	}
 	

@@ -33,8 +33,7 @@ public class Services {
 		   
 		    
 	    if(folder.exists()){
-	    	
-	    	
+	  
 	    	System.out.println("audio resource folder exists ");
 			File[] listOfFiles = folder.listFiles();
 			int count=listOfFiles.length+1;
@@ -54,6 +53,7 @@ public class Services {
         fos.write(output.toByteArray());
         fos.flush();
         fos.close();
+        
 	    }else if(!(folder.exists())){
 	    	
 	    	System.out.println("audio resource folder not exists  but create");

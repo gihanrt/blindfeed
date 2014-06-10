@@ -56,8 +56,8 @@
             <li><a href="userhelp">Help</a></li>
           </ul>
           <form class="navbar-form navbar-right" role="form">
-             <a id="user" class="btn btn-success" href="#" role="button">user : Sahan</a>
-             <a id="logout" class="btn btn-success" href="#" role="button">logout</a>
+             <a id="user" class="btn btn-success" href="#" role="button">Your Logged as ${user}</a>
+             <a id="logout" class="btn btn-success" href="logout" role="button">logout</a>
           </form>
           <ul class="nav navbar-nav navbar-right"> 
             <li class="active"></li>

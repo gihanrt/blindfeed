@@ -34,6 +34,8 @@
 	<beans:bean id="storeclips" class="com.deadlock.blindfeed.record.Services"></beans:bean>
 	
 	<beans:bean id="paragraph" class="com.deadlock.blindfeed.record.ParagraphDAO"></beans:bean>
+
+	<beans:bean id="newlogin" class="com.deadlock.blindfeed.login.login_db"></beans:bean>
 	
 	 <!-- declare datasource bean --> 
 	 <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">

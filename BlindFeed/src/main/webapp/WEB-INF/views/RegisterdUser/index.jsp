@@ -4,7 +4,6 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
@@ -41,14 +40,14 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="Nusercontribute">Contribute</a></li>
+            <li><a href="record">Contribute</a></li>
             <li><a href="Nuserabout">About</a></li>
             <li><a href="Nusercontact">Contact us</a></li>
             <li><a href="Nuserhelp">Help</a></li>
           </ul>
            <form class="navbar-form navbar-right" role="form">
-             <a id="user" class="btn btn-success" href="#" role="button">user : Tharindu</a>
-             <a id="logout" class="btn btn-success" href="#" role="button">logout</a>
+             <a id="user" class="btn btn-success" href="#" role="button">Hello ${user}</a>
+             <a id="logout" class="btn btn-success" href="logout" role="button">logout</a>
           </form>
           <ul class="nav navbar-nav navbar-right"> 
             <li class="active"></li>

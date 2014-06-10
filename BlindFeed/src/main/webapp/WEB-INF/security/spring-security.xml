@@ -6,7 +6,7 @@
 		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
 <security:http auto-config="true">
-	<security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN"/>
+	<!-- <security:intercept-url pattern="/**" access="ROLE_USER,ROLE_ADMIN"/> -->
 </security:http>
 
 <security:authentication-manager>

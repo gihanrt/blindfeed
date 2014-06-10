@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class TempUnRegisterdUserController {
 
-	@RequestMapping(value="/index",method=RequestMethod.GET)
+	/*@RequestMapping(value="/index",method=RequestMethod.GET)
 	public String name(){
 		return "unreguser/index";
 	}
-	
+	*/
 	@RequestMapping(value="/reg",method=RequestMethod.GET)
 	public String name1(){
 		return "unreguser/reguser";

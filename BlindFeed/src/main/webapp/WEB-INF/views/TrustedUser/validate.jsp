@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+<%@ page language="java" contentType="text/html; charset=utf-8"
     pageEncoding="ISO-8859-1"%>
     <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%> 
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -24,6 +24,30 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
     <![endif]-->
+    
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#btn1").click(function(){
+   location.href="http://localhost:8080/show_para1/accept";
+  });
+});
+</script>
+    <script>
+$(document).ready(function(){
+  $("#btn2").click(function(){
+   location.href="http://localhost:8080/show_para1/reject/";
+  });
+});
+</script>
+
+<script>
+function myFunction() {
+    alert("Thank You for your contribution");
+}
+</script>
+
+    
   </head>
   <body>
     <!-- Fixed navbar -->
@@ -48,7 +72,7 @@
             <li><a href="userhelp">Help</a></li>
           </ul>
           <form class="navbar-form navbar-right" role="form">
-             <a id="user" class="btn btn-success" href="#" role="button">user : Tharindu</a>
+             <a id="user" class="btn btn-success" href="#" role="button">Your Logged as ${user}</a>
              <a id="logout" class="btn btn-success" href="#" role="button">logout</a>
           </form>
           <ul class="nav navbar-nav navbar-right"> 
@@ -58,14 +82,72 @@
       </div>
     </div>
 
-    <div class="container">
+    <div class="jumbotron">
 
       <!-- Main component for a primary marketing message or call to action -->
-      <div class="jumbotron">
-        <h1>Valdate</h1>
+      <div class="row clearfix">
+      <div class="col-md-6 column">
+        <h1>Validate</h1>
         <p>audio clip validations going here...</p>
+        
+        <table border="1">
+		<!-- 
+		PersonList is the object which contain available persons in the database
+		its displayed iterately. using JSTL fname,lname,age is attribute of model class
+		 -->
+	
+		
+			<tr>
+			<td>${PList.para_text}</td>
+			<%-- <td>${PList.location}</td> --%>
+			</tr>
+			
+		
+	
+	</table>
+	
+	</div>
+	<br>
+	<div class="col-md-6 column">
+        <h4>Preview</h4>
+    <br> <!--        
+         <object classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" width="700" height="100"
+    codebase="http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab">
+    <param name="movie"  value="resources/singlemp3player.swf?file=resources/sound.mp3&backColor=990000&frontColor=ddddff&repeatPlay=true&songVolume=30" />
+    <param name="wmode" value="transparent" />
+    <embed wmode="transparent" width="400" height="30" src="resources/singlemp3player.swf?file=resources/sound.mp3&backColor=990000&frontColor=ddddff&repeatPlay=true&songVolume=30"
+    type="application/x-shockwave-flash" pluginspage="http://www.macromedia.com/go/getflashplayer" />
+</object> -->
+
+		<div>
+			 <audio controls>
+			
+<source src="${loc_path}">
+</audio> 
+<%-- <<audio controls>
+  
+  <source src="${loc_path}" type="audio/mpeg">
+Your browser does not support the audio element.
+</audio> 
+ --%>
+
+		</div>
+
+<br>
+<button id="btn1" onclick="myFunction()">Accept</button>
+<button id="btn2">Reject</button>
+<!-- <button type="button" onclick="alert('You have accepted the audio clip,,,,,,, thank you for your contribution,,,!')">Accept</button>
+<button type="button" onclick="alert('You reject the audio clip,,,,,,, thank you for your contribution,,,!')">Reject</button> -->
+
+
+
+
+        
       </div>
-      <div class="container">
+      
+      </div>
+      
+      <div class="jumbotron">
         <center><p class="text-muted">Deadlock product - BlindFeed</p></center>
       </div>
     </div> <!-- /container -->

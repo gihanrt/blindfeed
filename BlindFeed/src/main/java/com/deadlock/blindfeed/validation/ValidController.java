@@ -25,35 +25,16 @@ import com.deadlock.blindfeed.validation.para_DB;
 @Controller
 public class ValidController {
 @Autowired para_DB paraDB;
-	
-	private static final Logger logger = LoggerFactory.getLogger(ValidController.class);
-	
-	/**
-	 * Simply selects the home view to render by returning its name.
-	 */
-	@RequestMapping(value = "/validation", method = RequestMethod.GET)
-	public String home(Locale locale, Model model) {
-		logger.info("Welcome home! The client locale is {}.", locale);
-		
-		Date date = new Date();
-		DateFormat dateFormat = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.LONG, locale);
-		
-		String formattedDate = dateFormat.format(date);
-		
-		model.addAttribute("serverTime", formattedDate );
-		
-		return "home";
-	}
-	
-     
-	
-	@RequestMapping(value="/validview",method=RequestMethod.GET)
+
+	@RequestMapping(value="/validation",method=RequestMethod.GET)
 	public String DisplayData(HttpServletRequest request,Model model){
 
 		List<Paragraph> list=paraDB.getpara();
 		int length=list.size();
+		
 		if(length==0){
-			return "SQLexception";
+			
+			return "TrustedUser/SQLexception";
 		}
 		else{
 		HttpSession session = request.getSession();
@@ -77,7 +58,7 @@ public class ValidController {
 	    model.addAttribute("loc_path", path);
 	    System.out.println(path);
 	   
-	    return "validate";
+	    return "TrustedUser/validate";
 	}
 	}
 	@RequestMapping(value="/validaccept",method=RequestMethod.GET)
@@ -87,18 +68,19 @@ public class ValidController {
 		
 		int para_id=(Integer) session.getAttribute("para_id");
 		int book_id=(Integer) session.getAttribute("book_id");
-		//int user_id=Integer) session.getAttribute("user_id");
+		int user_id=(Integer) session.getAttribute("USERID");
+		
 		paraDB.accept_upadate1(para_id, book_id);
-		//paraDB.accept_upadate2(para_id, book_id,user_id);
+		paraDB.accept_upadate2(para_id, book_id,user_id);
 		System.out.println("Sucessfully updated");
-		return "thankyou";
+		return "TrustedUser/thankyou";
 	}
+	
+	
 	@RequestMapping(value="/validreject",method=RequestMethod.GET)
 public String reject(HttpServletRequest request){
 		
-		
-		
-            HttpSession session = request.getSession(false);
+        HttpSession session = request.getSession(false);
 		
 		int para_id=(Integer) session.getAttribute("para_id");
 		int book_id=(Integer) session.getAttribute("book_id");
@@ -106,9 +88,11 @@ public String reject(HttpServletRequest request){
 		
 		paraDB.audio_delete(para_id, book_id);
 		paraDB.reject_upadate(para_id, book_id);
-		paraDB.mp3_delete(path);
 		
+		//delete mp3
+		//paraDB.mp3_delete(path);
+		System.out.println(path);
 		System.out.println("Sucessfully updated");
-		return "thankyou ";
+		return "TrustedUser/thankyou ";
 	}
 }

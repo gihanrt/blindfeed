@@ -47,8 +47,8 @@
             <li><a href="Nuserhelp">Help</a></li>
           </ul>
           <form class="navbar-form navbar-right" role="form">
-             <a id="user" class="btn btn-success" href="#" role="button">user : Tharindu</a>
-             <a id="logout" class="btn btn-success" href="#" role="button">logout</a>
+             <a id="user" class="btn btn-success" href="#" role="button">Hello ${user}</a>
+             <a id="logout" class="btn btn-success" href="logout" role="button">logout</a>
           </form>
           <ul class="nav navbar-nav navbar-right"> 
             <li class="active"></li>
