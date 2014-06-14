@@ -110,9 +110,13 @@ public class RecordController {
 	    }
 	    
         logger.info("finish.............");
+        
         if(type == 1){
-        	return "TrustedUser/index";
+        	
+        	System.out.println("trusted user index page executed");
+        	return "redirect:/userindex";
         }else{
+        	System.out.println("normal user index page executed");
         	return "RegisterdUser/index";
         }
 		

@@ -24,9 +24,9 @@ public class ValidController {
 	public String DisplayData(HttpServletRequest request,Model model){
 
 		List<Paragraph> list=paraDB.getpara();
-		int length=list.size();
 		
-		if(length==0){
+		
+		if(list.size() ==0){
 			
 			return "TrustedUser/SQLexception";
 		}

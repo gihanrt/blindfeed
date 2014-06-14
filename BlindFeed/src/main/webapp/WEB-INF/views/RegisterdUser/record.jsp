@@ -20,7 +20,7 @@
    <script>
 
     $.jRecorder({ 
-        host : 'http://localhost:8080/blindfeed/record?filename=hello' ,  //replace with your server path please
+        host : 'http://192.168.22.146:8080//BlindFeed/record?filename=hello' ,  //replace with your server path please
         callback_started_recording:     function(){callback_started(); },
         callback_stopped_recording:     function(){callback_stopped(); },
         callback_activityLevel:         function(level){callback_activityLevel(level); },

@@ -49,8 +49,8 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="userindex">Home</a></li>
-            <li><a href="usercontribute">Contribute</a></li>
-            <li class="active"><a href="validate.html">Validate</a></li>
+            <li><a href="record">Contribute</a></li>
+            <li class="active"><a href="#">Validate</a></li>
             <li><a href="userabout">About</a></li>
             <li><a href="usercontact">Contact us</a></li>
             <li><a href="userhelp">Help</a></li>

@@ -18,9 +18,10 @@
 </head>
 <body> 
    <script>
+   
 
     $.jRecorder({ 
-        host : 'http://localhost:8080/blindfeed/record?filename=hello' ,  //replace with your server path please
+        host : 'http://192.168.22.146:8080//BlindFeed/record?filename=hello' ,  //replace with your server path please
         callback_started_recording:     function(){callback_started(); },
         callback_stopped_recording:     function(){callback_stopped(); },
         callback_activityLevel:         function(level){callback_activityLevel(level); },
@@ -47,7 +48,7 @@
           <ul class="nav navbar-nav">
             <li><a href="userindex">Home</a></li>
             <li  class="active"><a href="#">Contribute</a></li>
-            <li><a href="uservalidate">Validate</a></li>
+            <li><a href="validation">Validate</a></li>
             <li><a href="#">About</a></li>
             <li><a href="usercontact">Contact us</a></li>
             <li><a href="userhelp">Help</a></li>

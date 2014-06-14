@@ -37,7 +37,8 @@
 
 	<beans:bean id="newlogin" class="com.deadlock.blindfeed.login.login_db"></beans:bean>
 	
-	 <!-- declare datasource bean --> 
+	<beans:bean id="register" class="com.deadlock.blindfeed.registration.RegistrationDAO"></beans:bean>
+	
 	 <beans:bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	     <beans:property name="driverClassName" value="com.mysql.jdbc.Driver"></beans:property>
 	     <beans:property name="url" value="jdbc:mysql://localhost:3306/blindfeed(org)"></beans:property>

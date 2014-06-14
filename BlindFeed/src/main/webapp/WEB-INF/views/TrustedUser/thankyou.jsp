@@ -26,20 +26,6 @@
     <![endif]-->
     
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script>
-$(document).ready(function(){
-  $("#btn1").click(function(){
-   location.href="http://localhost:8080/show_para1/accept";
-  });
-});
-</script>
-    <script>
-$(document).ready(function(){
-  $("#btn2").click(function(){
-   location.href="http://localhost:8080/show_para1/reject/";
-  });
-});
-</script>
 
 <script>
 function myFunction() {
@@ -65,8 +51,8 @@ function myFunction() {
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li><a href="userindex">Home</a></li>
-            <li><a href="usercontribute">Contribute</a></li>
-            <li class="active"><a href="validate.html">Validate</a></li>
+            <li><a href="record">Contribute</a></li>
+            <li class="active"><a href="validation">Validate</a></li>
             <li><a href="userabout">About</a></li>
             <li><a href="usercontact">Contact us</a></li>
             <li><a href="userhelp">Help</a></li>
