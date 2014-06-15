@@ -37,14 +37,21 @@ public class RegistrationController {
 		System.out.println(language+" "+pswd);
 		System.out.println(age);
 		
-		List list=register.checkList(email);
-		
-		if(list.size() == 0){
-			register.register(registration);
-			return "redirect:/welcome";
-		}else{
-			return "redirect:/regi";
+		if(registration != null){
+			
+			List<Registration> list=register.checkList(email);
+			
+			if(list.size() == 0){
+				register.register(registration);
+				return "redirect:/welcome";
+			}else{
+				
+			}
 		}
+		
+		return "redirect:/regi";
+		
+		
 
 	}
 }
